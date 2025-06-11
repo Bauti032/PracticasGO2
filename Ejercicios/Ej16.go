@@ -13,7 +13,9 @@ func main() {
 		ei  int
 		acs int
 		m   int
+
 	)
+
 
 		fmt.Print("Ingrese la edad del empleado: ")
 		fmt.Scanln(&e)
