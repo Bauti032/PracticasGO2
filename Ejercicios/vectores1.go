@@ -15,7 +15,6 @@ import (
 	"fmt"
 )
 
-
 func main(){
 	var (
 		vecA[5] int
@@ -26,8 +25,9 @@ func main(){
 
 	cargarVectorA(&vecA)
 	cargarVectorB(&vecB)
-	cargarvecC(&vecA, &vecB, &vecC)
-	ordenarAscendenteC(&vecC)
+	ordenarAscendente(&vecA)
+	ordenarAscendente(&vecB)
+	vecC = cargarvecC(vecA, vecB)
 	fmt.Print(vecC)
 }
 
@@ -35,7 +35,7 @@ func main(){
 func cargarVectorA(vecA*[5] int){
 	var num int
 	for i := 0; i<5; i++{
-		fmt.Print("Ingrese un numero para el vector: ")
+		fmt.Print("Ingrese un numero para el vector A: ")
 		fmt.Scanln(&num)
 		vecA [i] = num
 	}
@@ -44,29 +44,47 @@ func cargarVectorA(vecA*[5] int){
 func cargarVectorB(vecB*[5] int){
 	var num int
 	for i := 0; i<5; i++{
-		fmt.Print("Ingrese un numero para el vector: ")
+		fmt.Print("Ingrese un numero para el vector B: ")
 		fmt.Scanln(&num)
 		vecB [i] = num
 	}
 }
 
-func cargarvecC(vecA*[5] int, vecB*[5] int, vecC*[10] int){
-	for x:= 0; x<10; x++{
-		vecC[x] = vecA[x]
-		x++		
-		vecC[x] = vecB[x]
+func cargarvecC(vecA [5]int, vecB [5]int) [10]int{
+	var( ia, ib int
+		vecC [10]int)
+
+
+		for ic := 0; ic < 10; ic++{
+			if ia < 5 && ib <5 && vecA[ia] < vecB[ib]{
+					vecC[ic] = vecA[ia]
+					ia++
+			}else if ib < 5{
+					vecC[ic] = vecB[ib]
+					ib++
+			}else if ia < 5{
+					vecC[ic] = vecA[ia]
+					ia++
+			}
 	}
+
+	return vecC
 }
 
-func ordenarAscendenteC(vecC*[10] int){
-	for x := 0; x < 10; x++{
-		for y := 0; y <10; y++{
-			if vecC[x]<vecC[y]{
-				aux := vecC[x]
-				vecC[x] = vecC[y]
-				vecC[y] = aux
+func ordenarAscendente(vec *[5]int){
+
+	for x := 0; x < 5; x++{
+		for y := 0; y <5; y++{
+			if vec[x]<vec[y]{
+				aux := vec[x]
+				vec[x] = vec[y]
+				vec[y] = aux
 			}
 		}
 	}
 }
+
+
+
+
 
