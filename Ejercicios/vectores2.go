@@ -27,7 +27,7 @@ func cargaRem(Nro_Movil int) {
  
 }
 
-func calculo_ganancias (Nro_Movil int, Rem[7] int)  {
+func calculo_ganancias(Nro_Movil int, Rem[7] int)  {
 
 	Cuadras_Realizadas := Rem[Nro_Movil]
 	Total := (Rem[Nro_Movil] * 500)
@@ -36,7 +36,7 @@ func calculo_ganancias (Nro_Movil int, Rem[7] int)  {
 
 }
 
-func Reporte_General (Rem[7] int) {
+func Reporte_General(Rem[7] int) {
 
 	for x := 1 ; x < 7; x++ {
 		Cuadras_Realizadas := Rem[x]
@@ -62,11 +62,11 @@ func OrdenDescendente(Rem *[7]int){
 func Menu() {
 	for {
 		fmt.Println("Bienvenido al Sistmea. Elija alguna de las opciones.")
-		fmt.Println("1. Carga de Moviles. ")
-		fmt.Println("2. Visualizar Ganancias de cada movil")
-		fmt.Println("3. Reporte Total")
-		fmt.Println("4. Ordenar Movil s/ganancia")
-		fmt.Println("0. Salir del programa")
+		fmt.Println("1. Carga de Moviles.")
+		fmt.Println("2. Visualizar Ganancias de cada movil.")
+		fmt.Println("3. Reporte Total.")
+		fmt.Println("4. Ordenar Movil s/ganancia.")
+		fmt.Println("0. Salir del programa.")
 
 		fmt.Println("Ingrese alguna de las opciones: ")
 		fmt.Scan(&n1)
