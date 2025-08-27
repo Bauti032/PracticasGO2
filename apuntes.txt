@@ -1,0 +1,77 @@
+Bucles, array y slices en go 
+
+slices = VECTOR DINÁMICO
+matrices con longitud dinamica, un slices de vectores 
+
+Buclea = Estructura de control que ejecuta serie de instrucciones una x cantidad de veces 
+
+ciclo for consta de 3 partes
+
+inicializacion variable i
+condicion de fin 
+aumento i (equivalente)
+
+en el mientras no se conoce la cantidad de variables a utilizar 
+
+tiene solo la condicion de corte 
+
+
+Array: conjunto de elementos del mismo tipo (datos heterogéneos)
+
+Arreglo unidimensional(vectores) o bidimensionales (matrices).
+
+var Vector [N] tipo de dato
+
+var matriz [Fila][Columna] tipo de dato
+
+            # GO UTILIZA INDEXADO BASE 0 
+
+
+
+------ SLICES -----
+Arreglos de longitud dinámica 
+
+var vector []tipo de dato
+
+        se deja corchetes vacios (igual a un vector sin indicar cant elementos)
+
+
+
+AGREGAR:
+Se agrega con la instrucción append
+
+vector = append(vector, 5) 
+
+La longitud del vector puede obtenerse mediante la instruccion len
+
+var longitud int = len(vector)
+
+¿Porque se hace un append?
+Cuando se declara el slice no tiene elementos, peor trabaja con un vect interno, cada vez que se hace un append se agrega elementos en los vectores internos.
+s = append(s,1) -> verifica el vector interno
+                    -> el vector es retornado como resultado de la funcion 
+
+
+s = append(s,3) -> Se crea otro vector interno con el doble del espacio que el anterior y agrega el elemento nuevo, copiando el anterior
+
+s = append(s, 5) -> Agarra el vector anterior, lo duplica y en vez de tener 2 espacios ahora pasa a tener 4.
+
+
+Array = tamaño fijo, se accede indicando la posicion, se agrega accediendo el elemento, longitud fija 
+Slice = tamaño dinamico, idem, agrega mediante append, longitud mediante len()
+
+
+Matrices bidimensionales (vector de vectores )
+
+
+var matriz [5][6] int 
+o lo que es lo mismo un vector de 5 elementos con 6 elementos cada uno.
+Si quiero acceder a fila 2, columna 6
+Es lo mismo que decir indice 2, elemento 3 del vector 
+
+
+Matriz de longitud dinamica 
+
+Se define como var matriz [][6]
+var fila [6] int 
+matriz = append(matriz, fila)
