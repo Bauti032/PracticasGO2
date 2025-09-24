@@ -13,11 +13,8 @@ package main
 // d) Ordenar la nueva matriz generado por código de autor.
 // e) Imprimir la matriz generada.
 
-
 import (
 	"fmt"
-	// "math/rand"
-	// "time"
 )
 
 const (
@@ -27,26 +24,9 @@ const (
 
 var Clibros int 
 func main() {
-	// rand.Seed(time.Now().UnixNano())
-
 	var (
-	MatrizA [][Columnas]int
-	// opcion int
-	
+	MatrizA [][Columnas]int	
 	)
-
-
-	
-	
-
-	// fmt.Println("1. Carga matriz")
-	// fmt.Println("2 Codigo autor, devuelve todos los libros")
-	// fmt.Println("3. Devuelve mas caro")
-	// fmt.Println("4. Ejemplares mayor a 45")
-	// fmt.Println("6. Ordenar e imprimir la matriz anterior")
-	// fmt.Println("Ingrese la opcion: ")
-	// fmt.Scanln(&opcion)
-
 
 
 		matriz := cargamatriz(MatrizA)
@@ -56,40 +36,14 @@ func main() {
 		fmt.Scanln(&codautor)
 		vector := codigoautor(matriz, codautor)
 		fmt.Println(vector)
-		
-// for opcion < 5 {
-	// switch opcion {
-	// case 1:
-	// 	matriz := cargamatriz(MatrizA)
-	// 	fmt.Println(matriz)
-	// 	fmt.Println("Ingrese la opcion: ")
-	// 	fmt.Scanln(&opcion)
-	// case 2:
-	// 	var codautor int
-	// 	fmt.Println("Ingrese el codigo de autor: ")
-	// 	fmt.Scanln(&codautor)
-	// 	vector := codigoautor(matriz, codautor)
-	// 	fmt.Println(vector)
-	// 	fmt.Println("Ingrese la opcion: ")
-	// 	fmt.Scanln(&opcion)
-
-	// case 3:
-	// case 4:
-	// case 5: 
-	// default :
-	// 	return
-	// 	}
-	// }
-// }
-	}
+		CLM,CAM := CLMC(matriz)
+		fmt.Printf("El codigo del libro mayor %d, codigo autor %d", CLM,CAM)
+		NMatriz:= NMatriz(matriz)
+		fmt.Println("El la matriz con los que son mas de 45: ")
+		fmt.Print(NMatriz)
+}
 
 func cargamatriz(MatrizA [][Columnas]int) [][Columnas]int {
-
-	// var nlibro int
-	// var nautor int
-	// var nejemplares int
-	// var precio int
-	
 	var fila [Columnas]int
 
 	fmt.Println("Ingrese la cantidad de libros a ingresar: ")
@@ -113,16 +67,72 @@ func cargamatriz(MatrizA [][Columnas]int) [][Columnas]int {
 	return MatrizA 
 }
 
-func codigoautor(MatrizA [][Columnas]int, codautor int) []int {
+// func codigoautor(MatrizA [][Columnas]int, codautor int) []int {
 
 
-	var vector []int
-	for f := 0; f < Clibros; f++ {
-		if codautor == MatrizA[f][1] {
-			vector = append(vector, MatrizA[f][1])
+// 	var vector []int
+// 	for f := 0; f < Clibros; f++ {
+// 		if codautor == MatrizA[f][1] {
+// 			vector = append(vector, MatrizA[f][1])
+// 		}
+
+// 	} 
+
+// 	return vector
+// }
+
+func CLMC(matriz [][Columnas]int)  (int, int){
+	var (PLM int
+		CAM int
+		CLM int)
+
+for i:=0; i< Clibros; i++{
+	if i == 0{
+		PLM = matriz[i][3]
+		CAM = matriz[i][1]
+		CLM = matriz[i][0]
+	}else if PLM < matriz[i][3]{
+		PLM = matriz[i][3]
+		CAM = matriz[i][1]
+		CLM = matriz[i][0]
+	}
+}
+
+
+return  CLM, CAM
+}
+
+//c) Generar una función que devuelva una matriz quecontenga el  código de libro y el código del autor de
+//aquellos libros cuyos números de ejemplares sea mayor a 45 unidades.
+func  NMatriz(matriz [][Columnas]int) [][2]int{
+	var nMatriz [][2]int
+
+	for i:=0; i<Clibros; i++{
+		if matriz [i][2] > 45{
+				nMatriz = append(nMatriz, [2]int{matriz[i][0],matriz[i][1]})
 		}
 
 	} 
+ return nMatriz
+			//vector = append(vector, MatrizA[f][1])
 
-	return vector
+}
+
+
+func ordenarautor(nMatriz [][2]int) [][2]int {
+
+	var vec [2]int
+	var CMayor int 
+
+	for i := 0; i < Clibros; i++ {
+		if nMatriz[i][1] > CMayor {
+			vec[0] = nMatriz[i][0]
+			vec[1] = nMatriz[i][1]
+
+			
+		}
+
+	}
+
+
 }
