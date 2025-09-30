@@ -1,1 +1,93 @@
 
+29/09/25
+
+    Testings
+
+
+Antes de compilar el programa se dan 3 tipos de errores: 
+    Tipo de errores:
+
+    - Lexicos:
+        
+    - Sintactios:
+
+    - Semanticos: 
+
+
+
+
+Luego de ejecutar el programa se dan 2 tipos de errores: 
+    - Logicos:
+
+    - De ejecucion:
+
+
+¿Cual es el objetivo de testing?
+    Probar la app para encontrar errores logicos de ejecucion
+
+¿Que hacemos si encontramos errores?
+    Corregirlos
+
+Un testing es exitoso cuando encuentra errores
+
+
+¿Es posible encontrar errores en un programa?
+En teoria si es posible, pero en la practica es muy dificil hacer una prueba exhaustiva 
+
+Se puede probar matematicamanete un programa. Verificacion matemática
+    Se plantea hipotesis de valores de entrada, ejecucion matematica  se esperan resultados
+
+
+Las pruebas muestran la PRESENCIA de errores, no pueden mostrar su AUSENCIA
+
+
+
+Que probamos para eliminar tantos errores como sea posible?
+    - Datos de entrada validos verificando una solucion conocida
+    - Datos invalidos
+    - Datos aleatorios
+    - Datos reales
+
+
+
+Ciencia inexacta 
+Cual seria un buen caso de prueba?
+Cuando una prueba es exitosa?
+
+Los errores en software tienden a ser repetidos: Principio de pareto (80-20)
+    El problema es aislar componentes para probarlos 
+
+    Comprobar modulos con mas actividad y testearlos primeros 
+
+
+Metodologias de pruebas de software
+- Ruta basica
+    Errores de la logica del programa. Tiene en particular que cuando uno prueba, prueba linea por linea del programa.
+
+- Caja negra
+Lo que uno busca es probar logica sin tener acceso al codigo 
+
+- Caja blanca
+Lo que uno busca es probar la logica teniendo acceso al programa
+
+
+
+
+Niveles de prueba:
+
+- De modulo o clase
+    Probar una pequeña porcion del codigo
+- De integracion
+    Prueba de caja blanca, se busca probar la conexion entre uno o mas modulos 
+- De aplicacion
+
+
+
+- Beta
+    Son de tipo caja negra, lo que se hace es exponer la interfaz de mi programa a un grupo reducido de usurio
+    En la prueba beta, lo que se hace es esperar que los usuarios prueben y encontrar errores de la prueba  
+
+
+1 paso 
+
+generar archivo main_test.go
