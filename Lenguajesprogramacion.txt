@@ -1,0 +1,67 @@
+Lenguaje de programacion
+    Compuesto por simbolos que junto a un conjunto de reglas que los combinan, permiten escribir programas
+    Se componen de un:
+    - Lexico (alfabeto)
+    - Sintaxis (Reglas gramaticales)
+    - Semantica (Representacion / Sentido)
+
+
+Se clasifican en 3 partes:
+Lenguaje maquina: Muy bajo - Comprensible por CPU -Ningna traduccion
+Lenguaje ensamblador: Bajo - Programador tecnico - Ensamblador
+Lenguaje de alto nivel: alto - Cualquier programador - Compilador o interprete
+
+Lenguaje maquina: Unico lenguaje que comprende una computadora y su estructura esta adecuada a los circuitos electricos y muy alejada al lenguaje humano
+    Principales caracteristicas:
+        - Sus instrucciones se expresan en codigo binario
+        - Los datos se referencian por direcciones de memoria
+        - Sus instrucciones estan muy ligadas a su procesador por lo tanto la portabilidad de estos lenguajes es muy baja
+        - No acepta comentarios ni nada
+
+
+Lenguaje ensamblador: Primer intento de sustituir el lenguaje maquina por uno mas cercano al ser humano, se empiezan a utilizar las notaciones simbolicas o nemotecnicas para representar los codigos de una operacion
+Tambien se comienza a utilizar el direccionamiento simbolico: es decir que los datos pueden ser identificados mediante variables y tambien se incluye el uso de comentarios
+
+
+Lenguajes de alto nivel: Estos lenguajes son los mas evolucionados, y usan palabras o frases faciles de entender. Con los lenguajes de alto nivel se logra una independencia del procesador donde se ejectue (portables)
+Una sentencia en lenguaje de alto nivel puede ser traducidas en una o mas sentencias de lenguaje maquina
+* Hay que programar a conciencia para ser uso adecuado de los recursos de la computadora 
+
+
+Traductores: Es un metaprograma porque es un programa que recibe como entrada un programa, pero no realiza la ejecucion del programa, pero se encarga de analizar y traducir algo semanticamente equivalente al lenguaje maquina
+
+
+2 tipos de traductores: 
+Compilador:Traduce antes de ejecutar, genera .exe, C, C++, Pascal
+Traduce completamente un programa fuente, generando programa objeto escrito en lenguaje maquina. El Compilador avisa al usuario si existen errores en el programa fuente y solo genera el programa objeto si no existe errores
+Interprete: Traduce durante la ejecucion, traduce y ejecuta al instante, Python, PHP, Ruby
+Un interprete permite que un programa fuente, se vaya traduciendo y ejecutando al mismo tiempo sentencia por sentencia, es decir, toma una sentencia fuente la analiza, la interpreta y la ejecuta inmediatamente 
+
+
+Para poder realizar el proceso de compilacion tanto el programa de alto nivel como el programa que yo quiero traducir, se tienen que alojar en la memoria RAM
+Durante este proceso de compilacion pueden aparecer errores en cuyo caso no se generara el programa objeto y se realizara el denominado listado de compilacion
+Este listado permite que el programador solucione los errores detectados para empezar nuevamente el proceso
+Una vez que el proceso de compilacion se ejecuto, no hay mas errores y se genero el programa objeto, es necesario someter a ese programa objeto a un proceso de montaje 
+Donde justamente se enlazan los distintos objetos traducidos y se genera el ejecutable 
+
+En el proceso de compilacion cuenta con 2 etapas; etapa analisis y etapa sintesis 
+Y ademas en todo el proceso de compilacion se va generando una tabla de simbolos con datos que necesita el compilador para realizar todo el proceso 
+Ademas, el compilador necesita un modulo de tratamiento de errores que determina que hacer ante la aparicion de algun error
+
+Atapa de analisis (3 tipos):
+Se hace un analisis:
+Lexico: En este analisis se examina el codigo fuente de izquierda a derecha, reconociendo las unidades basicas de informacion pertenecientes al lenguaje, estas unidades se dominan token y representan una cadena o secuencia de caracteres, que tiene un significado propio en el lenguaje
+Ademas de reconocer cada token se va generando la tabla de simbolos, en este primer analisis se consigue un codigo mas limpio eliminando espacios, tabulaciones, comentarios, todo lo que carece de sentido.
+Si el codigo es lexicamente correcto se realiza el analisis sintactico
+Sintactico: La sintaxis de un lenguaje especifica como deben escribirse los programas, en base a un conjunto de reglas sintacticas que determinan la gramatica del lenguaje, el analisis sintactico recibe la tira de token del analizador lexico y analiza posibles errores sintacticos
+Semantico: El analisis semantico se encarga de estudiar la coherencia semantica del codigo fuente a partir de la identificacion de las construcciones sintacticas, debe ser capaz de detectar construcciones con un significado incorrecto
+
+
+Etapa sintesis:
+En esta etapa se construye el programa objeto a partir de la Representacion intermedia obtenida en la etapa de analisis, aca se genera codigo intermedio propio del compilador se optimiza ese codigo intermedio y se genera el codigo objeto 
+
+Modulo tratamiento de errores:
+Diagnosticar error: Al detectar un error debe ofrecer al programador un mensaje de diagnostico que sera incluido en el listado de compilacion 
+Recuperarse del error: Una vez detectado el error tratarlo de alguna forma para poder continuar la compilacion y permitir detectar mas errores en el programa fuente
+
+
